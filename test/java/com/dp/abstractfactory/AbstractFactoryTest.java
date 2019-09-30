@@ -1,11 +1,12 @@
 package com.dp.abstractfactory;
 
-import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
 
+@RunWith(Suite.class)
+@Suite.SuiteClasses({
+        EmberAbstractFactoryTest.class,
+        EnginolaAbstractFactoryTest.class
+})
 public class AbstractFactoryTest {
-    @Test
-    public void getFactory() {
-        AbstractFactory factory = AbstractFactory.getFactory(Architecture.EMBER);
-        CPU cpu = factory.createCPU();
-    }
 }

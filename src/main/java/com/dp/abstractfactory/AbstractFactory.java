@@ -6,7 +6,7 @@ public abstract class AbstractFactory {
 
     // Returns a concrete factory object that is an instance of the
     // concrete factory class appropriate for the given architecture.
-    static AbstractFactory getFactory(Architecture architecture) {
+    public static AbstractFactory getFactory(Architecture architecture) {
         AbstractFactory factory = null;
         switch (architecture) {
             case ENGINOLA:
