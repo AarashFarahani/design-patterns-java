@@ -3,7 +3,7 @@ package com.dp.bridge;
 public class Stack {
     private StackImpl impl;
 
-    public Stack( String s ) {
+    public Stack(String s) {
         if (s.equals("array")) {
             impl = new StackArray();
         } else if (s.equals("list")) {
