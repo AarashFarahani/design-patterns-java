@@ -16,19 +16,23 @@ public class CommandTest {
 
     @Test
     public void executeGit() {
-        commands.stream()
+        Command command = commands.stream()
                 .filter(a-> a.checkName("git"))
                 .findAny()
-                .orElse(null)
-                .execute("Param 1", "Param 2");
+                .orElse(null);
+
+        assert command.getClass().equals(GitCommand.class);
+        command.execute("Param 1", "Param 2");
     }
 
     @Test
     public void executeSvn() {
-        commands.stream()
+        Command command = commands.stream()
                 .filter(a-> a.checkName("svn"))
                 .findAny()
-                .orElse(null)
-                .execute("Param 1", "Param 2");
+                .orElse(null);
+
+        assert command.getClass().equals(SvnCommand.class);
+        command.execute("Param 1", "Param 2", "Param 2");
     }
 }
